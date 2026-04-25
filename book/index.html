@@ -1192,6 +1192,212 @@
     letter-spacing: 0.1em;
     outline: none;
   }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    nav {
+      padding: 16px 24px;
+    }
+
+    .hero-content {
+      width: 100%;
+      padding: 0 24px;
+      gap: 36px;
+      grid-template-columns: 1fr;
+      justify-items: start;
+    }
+
+    .book-mockup {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-meta {
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .synopsis-inner,
+    .characters-inner,
+    .themes-inner,
+    .author-inner,
+    .quote-inner {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .synopsis-inner {
+      gap: 48px;
+      grid-template-columns: 1fr;
+    }
+
+    .synopsis-label-col {
+      position: static;
+    }
+
+    .world-sticky-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .world-sticky-left {
+      position: relative;
+      top: auto;
+      height: auto;
+      min-height: 60vh;
+      padding: 64px 24px;
+    }
+
+    .world-scroll-panel {
+      min-height: auto;
+      padding: 64px 24px;
+      border-left: none;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .char-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .themes-row {
+      grid-template-columns: 1fr;
+    }
+
+    .theme-item {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 40px 24px;
+    }
+
+    .theme-item:last-child {
+      border-bottom: none;
+    }
+
+    .author-inner {
+      gap: 32px;
+      grid-template-columns: 1fr;
+    }
+
+    footer {
+      padding: 28px 24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #hero {
+      min-height: 620px;
+      height: auto;
+      padding: 108px 0 56px;
+    }
+
+    .hero-title {
+      font-size: clamp(52px, 16vw, 86px);
+    }
+
+    .hero-tagline {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .book-3d,
+    .book-front,
+    .book-3d img {
+      width: 180px !important;
+      height: 262px !important;
+    }
+
+    nav {
+      padding: 14px 16px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .nav-brand {
+      font-size: 16px;
+    }
+
+    .nav-links {
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-size: 9px;
+      letter-spacing: 0.16em;
+    }
+
+    #synopsis,
+    #characters,
+    #themes,
+    #quote,
+    #author {
+      padding-top: 84px;
+      padding-bottom: 84px;
+    }
+
+    #synopsis::before,
+    .giant-quote,
+    .scroll-cue,
+    .scroll-panel-num,
+    .world-sticky-content .big-num {
+      display: none;
+    }
+
+    .pull-quote {
+      font-size: 20px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      padding-left: 18px;
+    }
+
+    .body-text,
+    .scroll-panel-body,
+    .zone-desc,
+    .theme-desc {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .section-title {
+      font-size: clamp(38px, 12vw, 56px);
+    }
+
+    .char-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .world-sticky-left {
+      min-height: auto;
+      padding: 52px 20px;
+    }
+
+    .world-scroll-panel {
+      padding: 52px 20px;
+    }
+
+    .zone-stats {
+      grid-template-columns: 1fr;
+      margin-top: 28px;
+    }
+
+    .author-name {
+      font-size: 42px;
+    }
+
+    .author-portrait {
+      width: 160px;
+      height: 160px;
+    }
+
+    footer {
+      gap: 8px;
+      text-align: left;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 24px 16px;
+    }
+  }
 </style>
 </head>
 <body>
