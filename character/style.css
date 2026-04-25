@@ -1,0 +1,564 @@
+:root {
+  --bg-dark: #0f1118;
+  --bg-mid: #eef0f4;
+  --text-main: #1b1f28;
+  --text-sub: #5d6575;
+  --line: #d9dde5;
+  --point: #49d2b5;
+}
+
+@font-face {
+  font-family: "DungeonFighterOnlineBeatBeat";
+  src: url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2") format("woff2"),
+    url("//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  font-family: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background: #fff;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.inner {
+  width: min(1200px, 90%);
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: "DungeonFighterOnlineBeatBeat", sans-serif;
+  font-size: 52px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+}
+
+.visual1 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual1__bg,
+.visual1__dim {
+  position: absolute;
+  inset: 0;
+}
+
+.visual1__bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual1__dim {
+  background: rgba(7, 12, 24, 0.55);
+}
+
+.visual1__content {
+  position: relative;
+  z-index: 2;
+  width: min(700px, 78vw);
+  animation: floatY 4.6s ease-in-out infinite;
+}
+
+.visual1__main-image {
+  width: 70%;
+  margin: 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
+}
+
+.visual1__title {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(127, 190, 255, 0.75), 0 0 32px rgba(87, 149, 255, 0.62), 0 0 54px rgba(64, 123, 255, 0.45), 0 4px 16px rgba(0, 0, 0, 0.38);
+  width: min(90%, 780px);
+}
+
+.visual1__jp {
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  opacity: 0.95;
+  margin-bottom: 10px;
+}
+
+.visual1__ko {
+  font-family: "DungeonFighterOnlineBeatBeat", sans-serif;
+  font-size: 92px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.visual1__sub {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #dde8ee;
+  opacity: 0.95;
+}
+
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  border: 0;
+  background: transparent;
+  color: #fff;
+  z-index: 3;
+  cursor: pointer;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.scroll-indicator__text {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  opacity: 0.6;
+}
+
+.scroll-indicator__line {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.28);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator__line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 8px rgba(166, 210, 255, 0.95), 0 0 18px rgba(116, 178, 255, 0.75);
+  animation: lineLightTravel 1.8s ease-in-out infinite;
+}
+
+.section4 {
+  background: #fff;
+  padding: 96px 0 110px;
+}
+
+.section4__eyebrow,
+.section3__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.section4__eyebrow {
+  color: #1958c5;
+}
+
+.section3__eyebrow {
+  color: #8c93a2;
+}
+
+.section4__grid {
+  margin-top: 32px;
+  display: grid;
+  gap: clamp(24px, 6vw, 80px);
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.section4__desc p {
+  font-size: 1.02rem;
+  color: #0d1a33;
+  line-height: 1.86;
+  font-weight: 500;
+}
+
+.section4__desc p + p {
+  margin-top: 16px;
+}
+
+.section4__emphasis {
+  color: #0a2456;
+  font-weight: 800;
+}
+
+.section4__leadword {
+  color: #0a2456;
+  font-weight: 800;
+}
+
+.section4__info {
+  border-top: 1px solid var(--line);
+}
+
+.section4__info div {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  gap: 12px;
+}
+
+.section4__info dt {
+  color: #6f7787;
+  font-size: 0.88rem;
+}
+
+.section4__info dd {
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.section4__tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.section4__tags span {
+  border: 1px solid #9bc9d2;
+  background: #eaf6f8;
+  color: #116575;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.86rem;
+  line-height: 1.25;
+}
+
+.section5 {
+  background: #f2f4f7;
+  padding: 94px 0 110px;
+}
+
+.section5__eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #1958c5;
+}
+
+.section5__grid {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ability-card {
+  position: relative;
+  background: #f9fafc;
+  border: 1px solid #e3e6ec;
+  padding: 34px 20px 30px;
+  min-height: 190px;
+  overflow: hidden;
+}
+
+.ability-card__icon {
+  color: #1958c5;
+  font-size: calc(0.85rem + 4px);
+  margin-bottom: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ability-card h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  font-family: "DungeonFighterOnlineBeatBeat", sans-serif;
+  line-height: 1.22;
+}
+
+.ability-card > p:not(.ability-card__icon) {
+  color: #5d6575;
+  font-size: 0.88rem;
+  line-height: 1.72;
+}
+
+.ability-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  background:
+    linear-gradient(#1958c5, #1958c5) top left / 16px 1.6px no-repeat,
+    linear-gradient(#1958c5, #1958c5) top left / 1.6px 16px no-repeat,
+    linear-gradient(#1958c5, #1958c5) top right / 16px 1.6px no-repeat,
+    linear-gradient(#1958c5, #1958c5) top right / 1.6px 16px no-repeat,
+    linear-gradient(#1958c5, #1958c5) bottom left / 16px 1.6px no-repeat,
+    linear-gradient(#1958c5, #1958c5) bottom left / 1.6px 16px no-repeat,
+    linear-gradient(#1958c5, #1958c5) bottom right / 16px 1.6px no-repeat,
+    linear-gradient(#1958c5, #1958c5) bottom right / 1.6px 16px no-repeat;
+}
+
+.ability-card:hover::before {
+  opacity: 1;
+}
+
+.section3 {
+  background: #ffffff;
+  padding: 94px 0 110px;
+  overflow: hidden;
+}
+
+.scene-swiper {
+  overflow: visible;
+}
+
+.section3__head {
+  margin: 12px 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section3__eyebrow {
+  color: #1958c5;
+}
+
+.swiper-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.custom-nav {
+  width: 34px !important;
+  height: 30px !important;
+  border-radius: 2px;
+  border: 1px solid #dde3ea;
+  background: #fff;
+  position: static !important;
+  margin: 0 !important;
+  color: #4f596d !important;
+}
+
+.custom-nav::after {
+  font-size: 0.72rem !important;
+  font-weight: 700;
+}
+
+.scene-card {
+  background: #fff;
+  border: 1px solid #dde1e8;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.scene-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 0.42s ease;
+}
+
+.scene-card__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.scene-card__ep {
+  position: absolute;
+  left: 9px;
+  top: 9px;
+  z-index: 2;
+  background: rgba(36, 146, 153, 0.9);
+  color: #ffffff;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+.scene-card__body {
+  padding: 22px 22px 24px;
+}
+
+.scene-card__body h3 {
+  font-family: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.scene-card__body p {
+  color: #616979;
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+
+.scene-card:hover {
+  border-color: #cfd8e6;
+  box-shadow: 0 10px 24px rgba(17, 30, 56, 0.08);
+}
+
+.scene-card:hover img {
+  transform: scale(1.03);
+}
+
+.section-quote {
+  background: #f3f5f8;
+  border-top: 1px solid #e4e8ef;
+  border-bottom: 1px solid #e4e8ef;
+  padding: 86px 0 84px;
+}
+
+.section-quote__inner {
+  text-align: center;
+}
+
+.section-quote__text {
+  font-family: "DungeonFighterOnlineBeatBeat", sans-serif;
+  font-size: 30px;
+  line-height: 1.48;
+  color: #1b2334;
+}
+
+.section-quote__author {
+  margin-top: 22px;
+  color: #7f8898;
+  font-size: 0.86rem;
+  letter-spacing: 0.02em;
+}
+
+.footer1 {
+  background: #e9ecf2;
+  border-top: 1px solid #d7dce5;
+  text-align: center;
+  padding: 36px 12px;
+}
+
+.footer1 p {
+  font-family: "Pretendard", "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  color: #7e8697;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes lineLightTravel {
+  0% {
+    top: -20%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .section4__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section5__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 15px;
+  }
+
+  .visual1__content {
+    width: min(560px, 88vw);
+  }
+
+  .visual1__main-image {
+    width: 100%;
+  }
+
+  .visual1__title {
+    top: 54%;
+  }
+
+  .visual1__jp {
+    font-size: 18px;
+  }
+
+  .visual1__ko {
+    font-size: 72px;
+  }
+
+  .section-title {
+    font-size: 42px;
+  }
+
+  .section4,
+  .section5,
+  .section3,
+  .section-quote {
+    padding: 72px 0 84px;
+  }
+
+  .section5__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section4__desc p {
+    font-size: 0.94rem;
+    line-height: 1.75;
+  }
+
+  .section4__info dt {
+    font-size: 0.82rem;
+  }
+
+  .section4__info dd {
+    font-size: 0.9rem;
+  }
+
+  .footer1 p {
+    font-size: 13px;
+  }
+}
